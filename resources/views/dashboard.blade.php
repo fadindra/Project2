@@ -1,17 +1,25 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+        <div class="px-2">
+            <div class="flex -mx-2">
+                <div class="w-1/3 px-1" style="margin-left:35px;">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('add')">
+                        {{ __('Add') }}
+                    </x-nav-link>
+                </div>
+                <div class="w-1/3 px-1" style="margin-left:35px;">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('view')">
+                        {{ __('View') }}
+                    </x-nav-link>
+                </div>
+                <div class="w-1/3 px-1" style="margin-left:35px;">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('report')">
+                        {{ __('Delete') }}
+                    </x-nav-link>
                 </div>
             </div>
         </div>
-    </div>
+    </x-slot>
+
+
 </x-app-layout>
